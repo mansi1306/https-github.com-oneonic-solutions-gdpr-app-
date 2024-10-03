@@ -1,0 +1,23 @@
+/* DatePickerStyles.css */
+.react-datepicker-wrapper {
+    width: 100%; /* Full width */
+  }
+  
+  .react-datepicker__input-container {
+    width: 100%;
+    margin-top: 6px; /* Ensure container takes full width */
+  }
+  
+  .react-datepicker__input-container input {
+    width: 100%; /* Ensure input takes full width */
+    box-sizing: border-box;
+    height: 39px;
+    border: 2px solid lightgray;
+    border-radius: 5px;
+    padding-left: 10px; /* Include padding and border in width calculation */
+  }
+  
+  .date-picker-container {
+    margin-bottom: 16px; /* Add margin to avoid overlaps */
+  }
+  
