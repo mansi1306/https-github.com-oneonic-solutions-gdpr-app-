@@ -1,0 +1,32 @@
+from django.urls import path
+from . import views
+
+urlpatterns = [
+    path('auth/', views.shopify_auth, name='shopify_auth'),
+    path('auth_callback/', views.shopify_auth_callback, name='shopify_auth_callback'),
+    path('shop_name/', views.get_shop_name, name='get_shop_name'),
+    path('webhooks/uninstall', views.uninstall_webhook, name='uninstall_webhook'),
+    path('webhooks/customers/data_request', views.customer_data_request, name='customer_data_request'),
+    path('webhooks/customers/redact', views.customer_data_erasure, name='customer_data_erasure'),
+    path('webhooks/shop/redact', views.shop_data_erasure, name='shop_data_erasure'),
+    path('save_banner_type/', views.save_banner_type, name='save_banner_type'),
+    path('save_selected_countries/', views.save_selected_countries, name='save_selected_countries'),
+    path('get_store_data/', views.get_store_data, name='get_store_data'),
+    path('save_theme/', views.save_theme, name='save_theme'),
+    path('select_plan/', views.select_plan, name='select_plan'),
+    path('get_plan/', views.get_plan, name='get_plan'),
+    path('get_plan', views.get_plan, name='get_plan'),
+    path('create_charge/', views.create_recurring_application_charge, name='create_charge'),
+    path('accept_charge/', views.accept_charge, name='accept_charge'),
+    path('get_access_token/', views.get_access_token, name='get_access_token'),
+    path('get_csrf_token/', views.get_csrf_token, name='get_csrf_token'),
+    path('save_shop_preferences/', views.save_shop_preferences, name='save_shop_preferences'),
+    path('save_privacy_policy_settings/', views.save_privacy_policy_settings, name='save_privacy_policy_settings'),
+    path('display_shop_preferences/', views.display_shop_preferences, name='display_shop_preferences'),
+    path('get_user_country/', views.get_user_country, name='get_user_country'),
+    path('privacy_policy_settings/', views.privacy_policy_settings, name='privacy_policy_settings'),
+    path('get_cookies/', views.get_cookies, name='get_cookies'),
+    path('cookie_save_preferences/', views.cookie_save_preferences, name='cookie_save_preferences'),
+    path('get_cookie_preference_counts/', views.get_cookie_preference_counts, name='get_cookie_preference_counts'),
+     path('cookie_preference_list/', views.cookie_preference_list, name='cookie_preference_list'),
+]
