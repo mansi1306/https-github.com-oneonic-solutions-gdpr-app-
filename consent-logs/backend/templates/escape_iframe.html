@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://unpkg.com/@shopify/app-bridge"></script>
+</head>
+<body>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize App Bridge
+            var AppBridge = window['app-bridge'];
+            var createApp = AppBridge.default;
+            var Redirect = AppBridge.actions.Redirect;
+
+            var app = createApp({
+                apiKey: "{{ settings.SHOPIFY_API_KEY }}",
+                shopOrigin: "{{ shop }}",
+                forceRedirect: true,
+            });
+
+            // Use App Bridge to redirect out of the iframe
+            Redirect.create(app).dispatch(Redirect.Action.REMOTE, "{{ auth_url }}");
+        });
+    </script>
+</body>
+</html>
